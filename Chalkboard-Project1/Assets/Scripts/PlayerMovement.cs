@@ -74,14 +74,13 @@ public class PlayerMovement : MonoBehaviour
         //calculate movement direction
         moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
 
-        if (moveDirection.magnitude == 0)
-        {
-            rb.velocity = Vector3.zero;
-        }
-
         //on ground
         if (grounded)
         {
+            if (moveDirection.magnitude == 0)
+            {
+                rb.velocity = Vector3.zero;
+            }
             rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
         }
         else if(!grounded) 
