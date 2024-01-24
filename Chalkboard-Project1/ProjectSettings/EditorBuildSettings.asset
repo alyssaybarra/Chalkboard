@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Outdoors.unity
+    guid: ae2728e12b4514409a43e40d0667345a
+  - enabled: 1
+    path: Assets/Scenes/UndergroundMaze.unity
+    guid: 2854295f25fa24343afaf17e63c5b89d
   m_configObjects: {}
