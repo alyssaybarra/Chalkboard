@@ -49,16 +49,7 @@ public class PlayerMovement : MonoBehaviour
         MyInput();
         SpeedControl();
 
-        if(grounded)
-        {
-            rb.drag = groundDrag;
-   
-
-        }
-        else
-        {
-            rb.drag = 0; 
-        }
+        rb.drag = grounded ? groundDrag : 0;
     }
 
     private void FixedUpdate()
@@ -77,14 +68,16 @@ public class PlayerMovement : MonoBehaviour
             Jump();
             Invoke(nameof(ResetJump), airCooldown); 
         }
-
-
     }
 
     private void MovePlayer() {
         //calculate movement direction
         moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
 
+        if (moveDirection.magnitude == 0)
+        {
+            rb.velocity = Vector3.zero;
+        }
 
         //on ground
         if (grounded)
