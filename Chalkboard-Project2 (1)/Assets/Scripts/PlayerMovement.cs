@@ -40,8 +40,8 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
         readyToJump = true;
-        MAXIMUMMOVEMENTSPEED = moveSpeed * 1.5f;
-        
+        MAXIMUMMOVEMENTSPEED = moveSpeed * 3f;
+
     }
 
     // Update is called once per frame
@@ -77,6 +77,8 @@ public class PlayerMovement : MonoBehaviour
         //calculate movement direction
         moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
 
+        float speed = ChaseManager.chase ? MAXIMUMMOVEMENTSPEED : moveSpeed;
+
         //on ground
         if (grounded)
         {
@@ -84,20 +86,24 @@ public class PlayerMovement : MonoBehaviour
             {
                 rb.velocity = Vector3.zero;
             }
-            rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
+            rb.AddForce(moveDirection.normalized * speed * 10f, ForceMode.Force);
         }
         else if(!grounded) 
-            rb.AddForce(moveDirection.normalized * moveSpeed * 10f * airMultiplier, ForceMode.Force);
+            rb.AddForce(moveDirection.normalized * speed * 10f * airMultiplier, ForceMode.Force);
     }
 
     private void SpeedControl()
     {
         Vector3 flatVel = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
         //limit velocity if needed
-        if(Input.GetKey(sprintKey))
+        /*if(Input.GetKey(sprintKey))
         {
-            MAXIMUMMOVEMENTSPEED = moveSpeed * 1.5f;
+            MAXIMUMMOVEMENTSPEED = moveSpeed * 3f;
         }
+        else
+        {
+            MAXIMUMMOVEMENTSPEED = moveSpeed;
+        }*/
         if(flatVel.magnitude > MAXIMUMMOVEMENTSPEED)
         {
             Vector3 limitedVel = flatVel.normalized * moveSpeed;
