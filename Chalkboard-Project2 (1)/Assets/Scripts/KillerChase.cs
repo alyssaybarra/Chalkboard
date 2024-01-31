@@ -9,6 +9,11 @@ public class KillerChase : MonoBehaviour
 
     void Update()
     {
+        if (player == null)
+        {
+            player = GameObject.Find("Player").transform;
+        }
+
         transform.LookAt(player);
         transform.position += transform.forward * Time.deltaTime * speed;
     }
