@@ -29,8 +29,8 @@ public class PlayerMovement : MonoBehaviour
     public Transform orientation;
 
     [Header("Keybinds")]
-    public KeyCode jumpKey = KeyCode.Space; 
-    public KeyCode sprintKey = KeyCode.Shift;
+    public KeyCode jumpKey = KeyCode.Space;
+    public KeyCode sprintKey = KeyCode.LeftShift;
 
 
 
@@ -40,7 +40,7 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
         readyToJump = true;
-        MAXIMUMMOVEMENTSPEED = moveSpeed * 1.5;
+        MAXIMUMMOVEMENTSPEED = moveSpeed * 1.5f;
         
     }
 
@@ -96,7 +96,7 @@ public class PlayerMovement : MonoBehaviour
         //limit velocity if needed
         if(Input.GetKey(sprintKey))
         {
-            MAXIMUMMOVEMENTSPEED = moveSpeed * 1.5;
+            MAXIMUMMOVEMENTSPEED = moveSpeed * 1.5f;
         }
         if(flatVel.magnitude > MAXIMUMMOVEMENTSPEED)
         {
