@@ -1,0 +1,30 @@
+﻿<Properties StartupConfiguration="{92A30326-4CA9-A540-5FFD-0298D383672F}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/PlayerCam.cs">
+    <Files>
+      <File FileName="Assets/Scripts/ChaseManager.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/KillerChase.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/PlayerMovement.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/PlayerCam.cs" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Chalkboard-Project2 (1)" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="Scripts" expanded="True">
+                <Node name="PlayerCam.cs" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="bb44bf4c-af1a-4ac8-889b-42e2ac0aca9e" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
