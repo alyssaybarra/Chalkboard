@@ -34,6 +34,10 @@ public class KillerChase : MonoBehaviour
             transform.LookAt(player);
             transform.position += transform.forward * Time.deltaTime * speed;
         }
+        else
+        {
+            player = GameObject.Find("Player").transform;
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -41,8 +45,7 @@ public class KillerChase : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy"))
         {
             isGameOver = true;
-            Debug.Log("Collision with player detected!");
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
     }
 
