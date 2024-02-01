@@ -40,7 +40,7 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
         readyToJump = true;
-        MAXIMUMMOVEMENTSPEED = moveSpeed * 3f;
+        MAXIMUMMOVEMENTSPEED = moveSpeed * 3f * Time.deltaTime;
 
     }
 

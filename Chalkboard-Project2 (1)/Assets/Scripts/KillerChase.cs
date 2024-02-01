@@ -5,7 +5,7 @@ using UnityEngine;
 public class KillerChase : MonoBehaviour
 {
     public Transform player;
-    public float speed = 10f;
+    public float speed = 5f;
 
     void Update()
     {

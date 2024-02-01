@@ -10,6 +10,7 @@ public class ChaseManager : MonoBehaviour
     public Transform playerStartLocation;
     public static bool chase = false;
     public Camera playerCamera;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,4 +26,16 @@ public class ChaseManager : MonoBehaviour
         }
     }
 
+    void Update()
+    {
+   
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            Destroy(gameObject);
+        }
+    }
 }
