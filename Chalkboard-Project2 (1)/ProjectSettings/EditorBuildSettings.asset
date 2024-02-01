@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Project 2.unity
+    path: Assets/Project2.unity
     guid: 34b4df7a99ed84a7e8409f6ec20f420f
   - enabled: 1
     path: Assets/Assets/Scenes/Cabin.unity
