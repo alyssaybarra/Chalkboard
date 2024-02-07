@@ -13,15 +13,18 @@ public class CannonBehavior : MonoBehaviour
     private float percentageDone = 0;
     private float currentSpeed;
 
+    private bool moved = false;
+
 
     void OnTriggerStay(Collider col)
     {
-        if (!turning && Input.GetMouseButtonDown(0) && col.tag == "CannonDetector")
+        if (!moved && !turning && Input.GetMouseButtonDown(0) && col.tag == "CannonDetector")
         {
             startDirection = transform.eulerAngles;
             targetDirection = transform.eulerAngles + new Vector3(0, rotationAmount, 0);
             currentSpeed = speed;
             turning = true;
+            moved = true;
             percentageDone = 0;
         }
     }
