@@ -17,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
 
     private Rigidbody rb;
     private bool grounded;
+    private bool jumping = false;
 
     // Start is called before the first frame update
     void Start()
@@ -31,6 +32,8 @@ public class PlayerMovement : MonoBehaviour
         //ground check
         grounded = Physics.Raycast(transform.position, Vector3.down, PlayerHeight * .5f + .2f, whatIsGround); 
         SpeedControl();
+
+        jumping = grounded ? false : jumping;
 
         // jump
         if (Input.GetKeyDown(KeyCode.Space) && grounded)
@@ -53,9 +56,9 @@ public class PlayerMovement : MonoBehaviour
         //calculate movement direction
         Vector3 moveDirection = transform.forward * verticalInput + transform.right * horizontalInput;
 
-        if (moveDirection.magnitude == 0)
+        if (moveDirection.magnitude == 0 && !jumping)
         {
-            rb.velocity = new Vector3(0, rb.velocity.y, 0);
+            rb.velocity = new Vector3(0, Mathf.Min(0, rb.velocity.y), 0);
         }
 
         //sprint if shift is held
@@ -81,6 +84,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Jump()
     {
+        jumping = true;
         rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
         rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
     }
