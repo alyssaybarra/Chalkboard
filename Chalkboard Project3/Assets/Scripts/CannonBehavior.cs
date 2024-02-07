@@ -5,6 +5,7 @@ using UnityEngine;
 public class CannonBehavior : MonoBehaviour
 {
     public float speed;
+    public float rotationAmount = 180;
 
     private bool turning = false;
     private Vector3 startDirection;
@@ -18,7 +19,7 @@ public class CannonBehavior : MonoBehaviour
         if (!turning && Input.GetMouseButtonDown(0) && col.tag == "CannonDetector")
         {
             startDirection = transform.eulerAngles;
-            targetDirection = transform.eulerAngles + new Vector3(0, 180, 0);
+            targetDirection = transform.eulerAngles + new Vector3(0, rotationAmount, 0);
             currentSpeed = speed;
             turning = true;
             percentageDone = 0;
