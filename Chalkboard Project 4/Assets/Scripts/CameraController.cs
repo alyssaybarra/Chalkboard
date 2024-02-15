@@ -9,7 +9,7 @@ public class CameraController : MonoBehaviour
     public static float yaw;
     public Transform camTrans;
     public Transform playerTrans;
-
+    public bool isLocked;
     private Vector3 offset;
 
     void Start()
@@ -18,10 +18,13 @@ public class CameraController : MonoBehaviour
         Cursor.visible = false;
         yaw = camTrans.rotation.eulerAngles.y;
         offset = camTrans.position - playerTrans.position;
+        isLocked = false;
     }
 
     void Update()
     {
+        if (!isLocked) { 
+        
         //sets the camera's position to follow the player
         camTrans.position = playerTrans.position + offset;
 
@@ -34,5 +37,6 @@ public class CameraController : MonoBehaviour
 
         camTrans.eulerAngles = new Vector3(pitch, yaw, 0);
         playerTrans.eulerAngles = new Vector3(0, yaw, 0);
+        }
     }
 }

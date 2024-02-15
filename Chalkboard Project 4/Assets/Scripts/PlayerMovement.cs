@@ -11,6 +11,9 @@ public class PlayerMovement : MonoBehaviour
     public float airMultiplier;
     public float jumpForce;
 
+    [System.NonSerialized]
+    public bool canMove;
+
     [Header("Ground check")]
     public float PlayerHeight;
     public LayerMask whatIsGround;
@@ -24,6 +27,7 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
+        canMove = true;
     }
 
     // Update is called once per frame
