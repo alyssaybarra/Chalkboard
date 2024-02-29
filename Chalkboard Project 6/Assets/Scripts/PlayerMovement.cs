@@ -59,7 +59,6 @@ public class PlayerMovement : MonoBehaviour
 
         //calculate movement direction
         Vector3 moveDirection = transform.forward * verticalInput + transform.right * horizontalInput;
-        Debug.Log(moveDirection);
 
         if (moveDirection.magnitude == 0 && !jumping)
         {
