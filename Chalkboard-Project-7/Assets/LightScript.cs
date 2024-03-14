@@ -6,11 +6,14 @@ public class LightScript : MonoBehaviour
 {
     public float timer;
 
+    private Light light;
+
     // Start is called before the first frame update
     void Start()
     {
+        light = gameObject.GetComponent<Light>();
         int setup = Random.Range(1, 8);
-        this.gameObject.SetActive(setup > 4);
+        light.enabled = setup > 4;
 
         timer = Random.Range(10, 60);
     }
@@ -24,14 +27,14 @@ public class LightScript : MonoBehaviour
         }
         if (this.timer <= 0)
         {
-            if (gameObject.activeSelf)
+            if (light.enabled)
             {
-                this.gameObject.SetActive(false);
+                light.enabled = false;
                 timer = Random.Range(20, 40);
             }
             else
             {
-                this.gameObject.SetActive(true);
+                light.enabled = true;
                 timer = Random.Range(5, 15);
             }
         }
