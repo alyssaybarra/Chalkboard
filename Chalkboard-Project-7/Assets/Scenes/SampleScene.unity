@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.10628531, g: 0.047479227, b: 0.2801045, a: 1}
+  m_IndirectSpecularColor: {r: 0.10629762, g: 0.047426134, b: 0.27736992, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -95464,9 +95464,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8391222552659086748, guid: ea13a6635c1e14f39b0133ce5f789d02, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -4683669308469848369, guid: ea13a6635c1e14f39b0133ce5f789d02, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 39cfedf9ec4a68f4b8d0b1481c655239, type: 2}
+    - target: {fileID: -1018664272722485354, guid: ea13a6635c1e14f39b0133ce5f789d02, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: ea13a6635c1e14f39b0133ce5f789d02, type: 3}
       propertyPath: m_Name
       value: StreetLamp (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5050422055867433376, guid: ea13a6635c1e14f39b0133ce5f789d02, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5958438921693756439, guid: ea13a6635c1e14f39b0133ce5f789d02, type: 3}
       propertyPath: m_Intensity
