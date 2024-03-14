@@ -8,9 +8,8 @@ public class LightScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        int setup = Random.Range(1, 4);
-        Debug.Log(setup);
-        if (setup < 2)
+        int setup = Random.Range(1, 8);
+        if (setup < 3)
         {
             this.gameObject.SetActive(false);
         }
