@@ -15,6 +15,8 @@ public class DoorInteract : MonoBehaviour
 
     private bool sliderOpen = false;
 
+    bool inTrig = false;
+
     private void Start()
     {
         textField.text = "";
@@ -22,7 +24,7 @@ public class DoorInteract : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0) && dialogueLines.Length > 0)
+        if (Input.GetMouseButtonDown(0) && dialogueLines.Length > 0 && inTrig)
         {
             if (!sliderOpen)
             {
@@ -33,8 +35,14 @@ public class DoorInteract : MonoBehaviour
         }
     }
 
+    public void OnTriggerEnter(Collider other)
+    {
+        inTrig = true;
+    }
+
     private void OnTriggerExit(Collider other)
     {
+        inTrig = false;
         textField.text = "";
         animator.SetTrigger("CloseSlider");
         sliderOpen = false;
