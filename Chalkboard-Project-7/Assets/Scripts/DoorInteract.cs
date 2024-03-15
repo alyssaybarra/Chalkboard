@@ -20,7 +20,7 @@ public class DoorInteract : MonoBehaviour
         textField.text = "";
     }
 
-    private void OnTriggerStay(Collider other)
+    private void Update()
     {
         if (Input.GetMouseButtonDown(0) && dialogueLines.Length > 0)
         {

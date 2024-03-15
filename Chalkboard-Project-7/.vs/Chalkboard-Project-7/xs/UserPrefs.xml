@@ -1,0 +1,27 @@
+﻿<Properties StartupConfiguration="{FABEAA6C-9ECB-66E8-0B20-32D11A909B08}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/DoorInteract.cs">
+    <Files>
+      <File FileName="Assets/Scripts/DoorInteract.cs" Line="27" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Chalkboard-Project-7" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="Scripts" expanded="True">
+                <Node name="DoorInteract.cs" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="2c3aafa2-ab16-466f-b480-8fadcfe33e54" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
