@@ -41,7 +41,6 @@ public class TalkingScript : MonoBehaviour
             {
                 foreach (TextMeshProUGUI option in dialougeOptions) 
                 {
-                    Debug.Log("here");
                     option.gameObject.SetActive(false);
                 }
             }
@@ -90,7 +89,6 @@ public class TalkingScript : MonoBehaviour
         selectDialougeOption = 0;
         for (int index = 0; index < dialougeOptions.Count; index += 1)
         {
-            Debug.Log("there");
             TextMeshProUGUI option = dialougeOptions[index];
             option.gameObject.SetActive(this.isAccessable[index]);
         }
@@ -98,7 +96,7 @@ public class TalkingScript : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         text.gameObject.SetActive(false);
-        isIn = true;
+        isIn = false;
         curText = 0;
         foreach (TextMeshProUGUI option in dialougeOptions)
         {
