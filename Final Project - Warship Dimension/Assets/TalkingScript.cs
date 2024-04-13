@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 
@@ -19,6 +20,11 @@ public class TalkingScript : MonoBehaviour
     [SerializeField]
     List<string> branch3;
     [SerializeField]
+    List<string> branch4;
+    [SerializeField]
+    List<bool> isAccessable;
+    [SerializeField]
+    TurnValve turnValve;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,30 +34,26 @@ public class TalkingScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isIn && Input.GetMouseButtonDown(0) && this.curText < branch1.Count - 1)
+        if (isIn && Input.GetMouseButtonDown(0) && this.curText < this.getBranch(selectDialougeOption).Count - 1)
         {
             this.curText += 1;
             if (this.curText == 1) 
             {
                 foreach (TextMeshProUGUI option in dialougeOptions) 
                 {
+                    Debug.Log("here");
                     option.gameObject.SetActive(false);
                 }
             }
-            switch (selectDialougeOption)
+            text.text = this.getBranch(selectDialougeOption)[this.curText];
+            if (this.curText > 3 && this.selectDialougeOption == 2) 
             {
-                case (0):
-                    text.text = branch1[this.curText];
-                    break;
-                case (1):
-                    text.text = branch2[this.curText];
-                    break;
-                case (2):
-                    text.text = branch3[this.curText];
-                    break;
+                turnValve.enableTurning();
             }
         }
-        else if (isIn && Input.GetKeyDown(KeyCode.E) && selectDialougeOption < 1) 
+        else if (isIn && Input.GetKeyDown(KeyCode.E) 
+            && selectDialougeOption < this.isAccessable.Count - 1
+            && this.isAccessable[selectDialougeOption + 1]) 
         {
             dialougeOptions[selectDialougeOption].color = Color.white;
             selectDialougeOption += 1;
@@ -64,15 +66,33 @@ public class TalkingScript : MonoBehaviour
             dialougeOptions[selectDialougeOption].color = Color.red;
         }
     }
+    private List<string> getBranch(int index)
+    {
+        switch (index)
+        {
+            case (0):
+                return branch1;
+            case (1):
+                return branch2;
+            case (2):
+                return branch3;
+            case (3):
+                return branch4;
+        }
+        throw new System.Exception("invalidIndex");
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         text.gameObject.SetActive(true);
         isIn = true;
         text.text = branch1[this.curText];
         selectDialougeOption = 0;
-        foreach (TextMeshProUGUI option in dialougeOptions)
+        for (int index = 0; index < dialougeOptions.Count; index += 1)
         {
-            option.gameObject.SetActive(true);
+            Debug.Log("there");
+            TextMeshProUGUI option = dialougeOptions[index];
+            option.gameObject.SetActive(this.isAccessable[index]);
         }
     }
     private void OnTriggerExit(Collider other)
@@ -88,5 +108,10 @@ public class TalkingScript : MonoBehaviour
         dialougeOptions[0].color = Color.red;
 
 
+    }
+
+    public void setOption(int index, bool value) 
+    {
+        this.isAccessable[index] = value;
     }
 }
