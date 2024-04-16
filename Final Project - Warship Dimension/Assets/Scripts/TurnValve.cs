@@ -37,6 +37,7 @@ public class TurnValve : MonoBehaviour
             {
                 turning = false;
                 fog.SetActive(false);
+                text.text = "That should do it. I should probably report back the situation.";
             }
             else if (turningTime < Time.deltaTime)
             {
@@ -51,10 +52,10 @@ public class TurnValve : MonoBehaviour
         }
         if (hasPermissionToTurn && !hasBeenTurned)
         {
-            text.text = "I'll give it a try (Click to turn)";
+            text.text = "I'll give it a try (Click to turn the valve)";
         }
         else if (!hasPermissionToTurn) {
-            text.text = "I should ask the engineer, he's probably nearby. " +
+            text.text = "I should ask the engineer before touching this thing. " +
                 "\nI'm not going to break a dimension AND get on its people's badsides";
         }
     }
