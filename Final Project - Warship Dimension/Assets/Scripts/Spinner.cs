@@ -9,6 +9,8 @@ public class Spinner : MonoBehaviour
     public bool ySpin;
     public bool zSpin;
 
+    public float speedMult = 1;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,15 +24,15 @@ public class Spinner : MonoBehaviour
 
         if (xSpin)
         {
-            rotation *= Quaternion.Euler(-80 * Time.deltaTime, 0, 0);
+            rotation *= Quaternion.Euler(-80 * speedMult * Time.deltaTime, 0, 0);
         }    
         else if (ySpin)
         {
-            rotation *= Quaternion.Euler(0, -80 * Time.deltaTime, 0);
+            rotation *= Quaternion.Euler(0, -80 * speedMult * Time.deltaTime, 0);
         } 
         else if (zSpin)
         {
-            rotation *= Quaternion.Euler(0, 0, -80 * Time.deltaTime);
+            rotation *= Quaternion.Euler(0, 0, -80 * speedMult * Time.deltaTime);
         }
             
         transform.rotation *= rotation;
