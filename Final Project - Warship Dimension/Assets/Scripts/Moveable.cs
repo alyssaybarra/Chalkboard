@@ -9,7 +9,7 @@ public class Moveable : MonoBehaviour
     public float pickupRadius;
     public Transform holder;
 
-    private bool pickedUp;
+    [HideInInspector] public bool pickedUp;
     private Collider col;
     private Rigidbody rb;
 
