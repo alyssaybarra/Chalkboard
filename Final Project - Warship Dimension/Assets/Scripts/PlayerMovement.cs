@@ -57,7 +57,6 @@ public class PlayerMovement : MonoBehaviour
         float horizontalInput = Input.GetAxisRaw("Horizontal");
         float verticalInput = Input.GetAxisRaw("Vertical");
 
-        Debug.Log(horizontalInput + " " + verticalInput);
         //calculate movement direction
         Vector3 moveDirection = transform.forward * verticalInput + transform.right * horizontalInput;
 
