@@ -32,13 +32,13 @@ MonoBehaviour:
     m_Value: 0
   contrast:
     m_OverrideState: 0
-    m_Value: 0
+    m_Value: -33.7
   colorFilter:
     m_OverrideState: 1
-    m_Value: {r: 0.90251577, g: 0.8537736, b: 1, a: 1}
+    m_Value: {r: 0.8169265, g: 0.7335796, b: 0.990566, a: 1}
   hueShift:
     m_OverrideState: 0
     m_Value: 0
   saturation:
-    m_OverrideState: 0
-    m_Value: 0
+    m_OverrideState: 1
+    m_Value: 44.3
